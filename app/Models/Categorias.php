@@ -8,6 +8,7 @@ class Categorias extends Model
 {
     protected $table = 'categorias';
     protected $primaryKey = 'id';
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -23,5 +24,9 @@ class Categorias extends Model
     [
         "nome" => "required|max:100",
         "descricao" => "required|max:255",
+    ];
+
+    protected $casts = [
+        'id' => 'string',
     ];
 }

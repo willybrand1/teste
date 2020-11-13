@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
+use Webpatser\Uuid\Uuid;
+
 
 class CategoriaSeed extends Seeder
 {
@@ -16,8 +17,11 @@ class CategoriaSeed extends Seeder
     public function run()
     {
         $categorias = [
-            ['nome' => 'carros','descricao' => 'categoria de carros'],
-            ['nome' => 'marcas','descricao' => 'categoria de marcas de carros']
+            [
+                'id' => Uuid::generate(),
+                'nome' => 'carros',
+                'descricao' => 'categoria de carros'
+            ]
         ];
 
         DB::table('categorias')->insert($categorias);

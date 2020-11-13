@@ -8,6 +8,7 @@ class Produtos extends Model
 {
     protected $table = 'produtos';
     protected $primaryKey = 'id';
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -24,5 +25,10 @@ class Produtos extends Model
         "valor" => "required|numeric|max:8",
         "estoque" => "required|numeric",
         "dt_cadastro" => "required|date_format:Y-m-d H:i:s"
+    ];
+
+    protected $casts = [
+        'id' => 'string',
+        'id_categoria' => 'string'
     ];
 }
